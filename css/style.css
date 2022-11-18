@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Press Start 2P";
+    width: 100%;
+    height: 100vh;
+    background: url("../images/45908.jpg") no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow: auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 20px;
+}
+
+.right h3 {
+    margin-left: 5px;
+}
+
+.top, .bottom {
+    width: 250px;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.grid {
+    width: 250px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(15, 15, 15, 0.8);
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.top div, .bottom div, .grid div {
+    height: 23px;
+    width: 23px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    margin: 1px;
+}
+
+.top div, .bottom div {
+    background-color: azure;
+}
+
+.tetromino {
+    background-color: blue;
+}
+
+
+.mini-grid {
+    margin-top: 20px;
+    margin-left: 5px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(15, 15, 15, 0.8);
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.mini-grid div {
+    height: 23px;
+    width: 23px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    margin: 1px;
+}
+
+.game-over {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    top: 0;
+    bottom: 0;
+    height: fit-content;
+    text-align: center;
+    margin: auto;
+    color: white;
+    font-size: calc(var(--block-size) * 2);
+    font-family: 'Press Start 2P', cursive;
+    z-index: 2;
+    animation: flash 1s steps(2,end) infinite 3s;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.mobile-not-supported {
+    display: none;
+}
+
+@media only screen and (max-width: 576px) {
+    .container {
+        flex-direction: column-reverse;
+    }
+
+    .right {
+        margin-left: 0px;
+        flex-direction: row;
+        margin: 20px auto;
+    }
+
+    .left {
+        margin-bottom: 20px;
+    }
+
+    .mini-grid {
+        margin-top: 0px;
+    }
+
+    .mobile-not-supported {
+        display: block;
+    }
+}
+
+@keyframes flash {
+    from {visibility: hidden}
+    to {visibility: visible}
+}
